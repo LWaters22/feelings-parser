@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# info from REACT APP
+REACT-APP-README.md
+
 # dependencies
 /node_modules
 /.pnp
