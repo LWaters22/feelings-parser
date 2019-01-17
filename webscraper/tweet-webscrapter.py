@@ -4,6 +4,9 @@ from bs4 import BeautifulSoup as soup
 my_url = 'https://twitter.com/MULANEY?lang=en'
 
 # 'https://twitter.com/' + mulaney + "?lang=en'
+# 'https://twitter.com/' + username + "?lang=en'
+
+
 # 'https://twitter.com/BarackObama?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'
 # 'https://twitter.com/TheEllenShow?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'
 # 'https://twitter.com/KevinHart4real?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'
@@ -34,4 +37,5 @@ for tweet in tweets:
 
   print(fullname, time_posted, tweet_text + "\n")
   # with all extra data: page_soup.find('p', {"class":"tweet-text"})
+print("amt of tweets:", len(tweets))
 
