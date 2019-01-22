@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path, re_path
 from frontend.views import FrontendRenderView
+from frontend.views import postUsername
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', FrontendRenderView.as_view(), name='home')
+    path('', FrontendRenderView.as_view(), name='home'),
+    path('<str:search_username>/', postUsername.as_view(), name='')
 ]
 
 # urlpatters = [

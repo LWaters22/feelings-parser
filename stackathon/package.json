@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode=development"
+    "start": "webpack -w --mode=development"
   },
   "author": "Laura Waters",
   "license": "ISC",
@@ -13,6 +13,7 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.0",
     "@babel/preset-react": "^7.0.0",
+    "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
     "babel-polyfill": "^6.26.0",
     "react": "^16.7.0",

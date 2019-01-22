@@ -1,15 +1,19 @@
 import React from 'react'
 import LandingPage from './LandingPage'
 import AnalysisResults from "./AnalysisResults";
+import {withRouter, Route, Switch} from 'react-router-dom'
+import { Container, Segment } from 'semantic-ui-react';
 
 const App = () => {
   return (
-    <div>
-      <div>
-        Something should be happening
-      </div>
-    </div>
+    <Container fluid>
+      <br />
+      <Switch>
+        <Route exact path='/' component={LandingPage}/>
+        <Route path='/analysis' component={AnalysisResults} />
+      </Switch>
+    </Container>
   )
 }
 
-export default App
+export default withRouter(App)
