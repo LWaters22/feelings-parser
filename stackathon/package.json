@@ -1,0 +1,23 @@
+{
+  "name": "stackathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode=development"
+  },
+  "author": "Laura Waters",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "babel-polyfill": "^6.26.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "semantic-ui-react": "^0.84.0",
+    "webpack": "^4.29.0"
+  }
+}

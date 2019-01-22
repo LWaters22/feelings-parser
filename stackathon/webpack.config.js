@@ -1,13 +1,23 @@
 module.exports = {
+  entry: [
+    '@babel/polyfill',
+    './frontend/src/index.js'
+  ],
+  output: {
+    path: __dirname,
+    filename: './frontend/static/main.js'
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
+  devtool: 'source-map',
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js?$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        loader: 'babel-loader'
       }
     ]
   }
-};
+}
