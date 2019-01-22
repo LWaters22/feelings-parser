@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import include, path, re_path
 from frontend.views import FrontendRenderView
 from frontend.views import postUsername
+from frontend.views import getAnalysis
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', FrontendRenderView.as_view(), name='home'),
-    path('<str:search_username>/', postUsername.as_view(), name='')
+    path('analysis/<str:search_username>/', getAnalysis.as_view(), name='getUserAnalysis'),
+    path('<str:search_username>/', postUsername.as_view(), name='getUserInfo')
 ]
 
 # urlpatters = [

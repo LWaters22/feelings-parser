@@ -17,14 +17,8 @@ class InputForm extends Component{
   }
 
   async onSubmit(e) {
-    console.log('in form submit')
     this.props.gettingUserData(this.state.username);
-    // let response = await axios.get(`/${this.state.username}`, this.state.username);
-    // console.log(response);
-    // console.log(typeof response.data);
-    // console.log(response.data.avatar);
     this.setState({redirect: true})
-    //put username and response.data on the store and re-direct to Analysis results. there,
   }
 
   onChange(e) {
