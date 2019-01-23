@@ -2,13 +2,16 @@ import {Container, Grid, Header, Image, Button} from 'semantic-ui-react'
 import React, {Component} from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom'
 
 class AnalysisResults extends Component {
   constructor(props) {
     super()
     this.state = {
-      analysis: ''
+      analysis: '',
+      redirect: false
     }
+    this.onSubmit = this.onSubmit.bind(this)
   }
 
   async componentDidMount() {
@@ -31,34 +34,48 @@ class AnalysisResults extends Component {
     }
   }
 
+  onSubmit() {
+    this.setState({redirect: true})
+  }
+
   render() {
     return (
-      <Container>
+      <div>
         {
-          this.props.fullname ? (
-        <Grid centered>
-          <Grid.Row>
-            <Header>Here is how {this.props.fullname} has been tweeting</Header>
-          </Grid.Row>
-          <Grid.Row>
-            <Image src={this.props.avatar} />
-          </Grid.Row>
-          <Grid.Row>
+          this.state.redirect ? (
+            <Redirect to="/" />
+          ) : (
+          <Container>
             {
-              this.state.analysis ? (
-                <Header>{this.state.analysis}</Header>
-                // <Button onSubmit=>Try again?</Button>
+              this.props.fullname ? (
+            <Grid centered>
+              <Grid.Row>
+                <Header>Here is how {this.props.fullname} has been tweeting</Header>
+              </Grid.Row>
+              <Grid.Row>
+                <Image src={this.props.avatar} />
+              </Grid.Row>
+              <Grid.Row>
+                {
+                  this.state.analysis ? (
+                    <Container>
+                      <Header>{this.state.analysis}</Header>
+                      {/* <Button onSubmit={this.onSubmit}>Try again?</Button> */}
+                    </Container>
+                  ) : (
+                    <Header>Loading</Header>
+                  )
+                }
+              </Grid.Row>
+            </Grid>
               ) : (
                 <Header>Loading</Header>
               )
             }
-          </Grid.Row>
-        </Grid>
-          ) : (
-            <Header>Loading</Header>
+          </Container>
           )
         }
-      </Container>
+      </div>
     )
   }
 }

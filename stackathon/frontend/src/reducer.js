@@ -10,7 +10,6 @@ const gotUserData = (userData) => {
     fullname: userData.fullname,
     username: userData.username
   }
-
 }
 
 //THUNK CREATORS
